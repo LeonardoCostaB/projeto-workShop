@@ -1,0 +1,54 @@
+@charset "UFT-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: rgb(235, 235, 235);
+  --color-button: rgb(223, 96, 96);
+  --color: #FF5D84;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+
+  background-color: var(--background);
+  
+  font-size: 1.6rem;
+
+  font-family: 'Roboto', sans-serif;
+}
+
+body.hiddenScroll {
+  overflow: hidden;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0,);
+  white-space: nowrap;
+  border-width: 0;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background-color: none;
+}
+

@@ -1,0 +1,238 @@
+/*-------------------
+*Content
+*/
+
+.content {
+  display: grid;
+  grid-template-columns: 30%;
+  grid-template-rows: 100vh;
+  grid-template-areas: 
+  "left right";
+
+  align-items: center;
+  gap: 2rem;
+
+  width: 85%;
+  margin: auto;
+}
+
+/*------------------
+*Apresentation
+*/
+
+.apresentation {
+  grid-area: left;
+  width: 100%;
+}
+
+.apresentation p > span {
+  color: var(--color);
+}
+
+.apresentation p {
+  padding-top: 3rem;
+}
+
+.links {
+  margin-top: 3rem;
+
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.push-idea {
+  color: var(--color);
+
+  cursor: pointer;
+}
+
+.push-idea:hover {
+  filter: saturate(5);
+  transition: 700ms;
+}
+
+.view-idea {
+  width: 50%;
+
+  padding: 1rem;
+
+  border-radius: .6rem;
+
+  text-align: center;
+
+  background-color: var(--color);
+  color: white;
+}
+
+.view-idea:hover {
+  filter: saturate(5);
+  transition: 700ms;
+}
+
+
+footer {
+  margin-top: 4rem;
+}
+
+/*------------------
+*Ideas
+*/
+
+#ideas {
+  grid-area: right;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ideas {
+  background-color: white;
+
+  border-radius: .6rem;
+  box-shadow: .1rem .1rem .9rem rgba(0, 0, 0, 0.158);
+
+  display: flex;
+}
+
+.container {
+  padding: 1.3rem 1rem;
+}
+
+.image-ideas {
+  display: flex;
+  align-items: center;
+
+  width: 25%;
+}
+
+.image-ideas img {
+  width: 100%;
+  
+}
+
+.title-ideas h3 {
+  padding-bottom: .5rem;
+}
+
+.description-ideas {
+  padding: 1.5rem 0;
+  text-align: justify;
+}
+
+.enter-ideas {
+  display: flex;
+  justify-content: right;
+
+  padding-right: 2.5rem;
+}
+
+.enter-ideas a {
+  color: var(--color);
+}
+
+.enter-ideas a:hover {
+  filter: saturate(5);
+  transition: 400ms;
+}
+
+/*----------------------
+*Resposividade
+*/
+
+@media (max-width: 1250px){
+  html {
+    font-size: 58%;
+  }
+  
+  .view-idea {
+    width: 40%;
+  }
+}
+
+@media (max-width: 1100px){
+  html {
+    font-size: 54%;
+  }
+
+  .ideas {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 930px){
+  :root {
+    font-size: 60%;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    width: 95%;
+  }
+
+  .ideas {
+    width: 100%;
+  }
+
+  .links {
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+  }
+  
+  .view-idea {
+    width: 30%;
+  }
+}
+
+@media (max-width: 600px){
+  .apresentation img {
+    width: 50%;
+  }
+
+  main {
+    padding-bottom: 3rem;
+  }
+  .content {
+    width: 95%;
+  }
+
+  .ideas {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-ideas {
+    display: none;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 1.4rem;
+  }
+  
+  .title-ideas {
+    text-align: center;
+  }
+
+  .description-ideas {
+    text-align: center;
+
+    line-height: 2.2rem;
+
+    padding: 2rem;
+  }
+
+  .enter-ideas {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+}

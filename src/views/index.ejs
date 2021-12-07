@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WorkShop</title>
+
+  <!--Styles-->
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/pages/index.css">
+  <link rel="stylesheet" href="/styles/pages/modal.css">
+
+  <!--Style Font-->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!--Scripts-->
+  <script src="/scripts/index.js" defer type="module"></script>
+</head>
+<body>
+  
+  <main>
+    <div class="content">
+      <section class="apresentation">
+
+        <img src="/images/undefined - Imgur.png" alt="Casa criativa">
+
+
+        <p>Ficar em casa em períodos longos, não deve ser nada fácil.</p>
+
+        <p>Por isso, iremos catalogar ideias, <strong>brincadeiras, jogos, filmes, livros, cursos, dicas</strong> e tudo que for necessário para tornar esse momento mais interessante.</p>
+
+        <p>Comece clicando em <span>ver ideias</span> para ver as ideias cadastradas e contribua <span>adicionando a sua ideia</span></p>
+
+        <div class="links"
+        >
+          <button class="push-idea"><strong>+ Adicionar ideia</strong></button>
+
+          <a class="view-idea" href="ideias">Ver ideias</a>
+        </div>
+
+      </section>
+      
+      <section id="ideas">
+          
+        <% ideas.forEach(idea => { %>  
+          
+          <div class="ideas" data-id="<%= idea.id %>">
+          
+          <div class="image-ideas">
+            <img src="<%= idea.image %>" alt="">
+          </div>
+  
+          <div class="container">
+            <div class="title-ideas">
+              <h3><%= idea.title %></h3>
+              <small><%= idea.category %></small>
+            </div>
+  
+            <div class="description-ideas">
+              <p><%= idea.description %></p>
+            </div>
+            
+            <div class="enter-ideas">
+              <a href="<%= idea.link %>"><strong>Ir para ideia</strong></a>
+            </div>
+  
+          </div>
+  
+          </div>
+
+        <% }) %>   
+
+      </section>
+    </div>
+  </main>
+
+  <div class="modal-wrapper">
+      <div class="modal-content">
+        <form action="ideas/title/category/image/description/link" method="POST">
+          <fieldset>
+            <legend>NOVA IDEIA</legend>
+
+            <div class="input-wrapper">
+              <div class="input">
+                <label for-id="title-idea">Título da ideia</label>
+                <input
+                type="text"
+                name="titleIdea"
+                id="title-idea">
+              </div>
+
+              <div class="input">
+                <label for-id="category">Categoria</label>
+                <input 
+                type="text"
+                name="category"
+                id="category">
+              </div>
+            </div>
+
+            <div class="input-box">
+              
+              <div class="input-show">
+                <label for-id="image">Link da imagem</label>
+                <input
+                type="url"
+                name="image"
+                id="image">
+              </div>
+
+              <div class="input-show">
+                <label for-id="description">Digite uma descrição para esta ideia</label>
+                <textarea
+                name="description"
+                id="description"
+                cols="30"
+                rows="10">
+                </textarea>
+              </div>
+
+              <div class="input-show">
+                <label for-id="link">Link da ideia</label>
+                <input
+                type="url"
+                name="link"
+                id="link">
+              </div>
+
+            </div>
+
+            <div class="button-form">
+
+              <a href="/">Cancelar</a>
+
+              <button type="submit">Salvar</button>
+            </div>
+
+          </fieldset>
+        </form>
+      </div>
+  </div>
+
+</body>
+</html>
